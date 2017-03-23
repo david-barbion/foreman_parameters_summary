@@ -1,0 +1,19 @@
+<% title "Parameters" %>
+<table class="<%= table_css_classes 'table-two-pane table-condensed' %>">
+  <thead>
+    <tr>
+      <th><%= sort :name, :as => "Name" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parameters.each do |param| %>
+      <tr>
+        <td class="ellipsis">
+        <%= link_to_if_authorized param.name, hash_for_parameter_path(:id => param.name).merge(:auth_object => param, :authorizer => authorizer) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate_with_info @parameters %>

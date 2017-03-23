@@ -1,0 +1,31 @@
+<% title @name %>
+<table class="<%= table_css_classes 'table-two-pane table-fixed' %>">
+  <thead>
+    <tr>
+      <th class="col-md-8"><%= sort :value, :as => "Value" %></th>
+      <th>Found in</th>
+      <th>Container</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @selected_parameters.each do |selected_parameter| %>
+      <tr>
+        <td>
+          <%= selected_parameter.value %>
+        </td>
+        <td>
+          <%= selected_parameter.place %>
+        </td>
+        <td>
+          <%= selected_parameter.type %>
+        </td>
+        <td>
+          <%= selected_parameter.priority %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate_with_info @selected_parameters %>
