@@ -11,6 +11,12 @@ for how to install Foreman plugins
 
 A new submenu `parameter` under `monitor` is added. This menu will show all common parameters. Select one particular parameter will show all overriden values.
 
+Here are some screenshots:
+
+![Parameters list](wiki/parameters.png)
+
+![One parameter with overriden values](wiki/parameter.png)
+
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
